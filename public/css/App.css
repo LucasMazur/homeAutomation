@@ -1,0 +1,63 @@
+body {    
+    height: 100vh;
+}
+
+.App {
+    background-color: white;
+    min-height: 100vh;
+  }
+  
+  h1 {
+      display: flex;
+      justify-content: center;
+      margin: 0px;
+      color: black;
+      font-size: clamp(1.3rem, 2.4rem, 3.5rem);
+  }
+
+.container {
+    height: 60vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 7rem;
+}
+
+.container button {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 1.1rem;
+    margin: 1.4rem;
+    width: 80%;
+    height: 6.4rem;
+    border: 0;
+    cursor: pointer;
+    background: #3c94dc;
+    border-radius: 2rem;
+    color: white;
+    transition: background-color .2s;
+}
+
+a.addButton {
+    position: absolute;
+    right: 4rem;
+    bottom: 4rem;
+  
+    z-index: 10;
+  
+    width: 4rem;
+    height: 4rem;
+    background: #3c94dc;
+    border: 0;
+    border-radius: 1rem;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    transition: background-color 200ms;
+  }
+
+.addButton img {
+    width: 2rem;
+    height: 2rem; 
+}
