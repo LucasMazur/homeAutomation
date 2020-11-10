@@ -5,17 +5,17 @@ export default () => {
 
     const [roomList, setRoomList] = useState([])
 
-    /*useEffect(() => {
+    useEffect(() => {
         Axios.get("http://localhost:5500/getdata").then((response) => {
             setRoomList(response.data)
         })
-    }, [roomList])*/
+    }, [roomList])
 
-    useEffect(() => {
+    /*useEffect(() => {
         Axios.get("/api/server").then((response) => {
             setRoomList(response.data)
         })
-    }, [roomList])
+    }, [roomList])*/
 
     const removeData = (val) => {
         Axios.post("http://localhost:5500/removedata", {id: val})

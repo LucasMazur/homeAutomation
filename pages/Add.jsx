@@ -11,7 +11,7 @@ export default () => {
     const [ipDevice, setIpDevice] = useState('')
 
     const submitData = () => {
-        Axios.post("/api/savedata", {name: roomName, ip: ipDevice,})
+        Axios.post("http://localhost:5500/savedata", {name: roomName, ip: ipDevice,})
     }
 
     return (
