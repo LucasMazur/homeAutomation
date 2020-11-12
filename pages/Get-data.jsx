@@ -11,11 +11,11 @@ export default () => {
         })
     }, [roomList])*/
 
-    useEffect(() => {
+    /*useEffect(() => {
         Axios.get("/api/server").then((response) => {
             setRoomList(response.data)
         })
-    }, [roomList])
+    }, [roomList])*/
 
     const removeData = (val) => {
         Axios.post("http://localhost:5500/removedata", {id: val})
@@ -23,15 +23,15 @@ export default () => {
 
     return (
         <>
-        {roomList.map((val) => {
-            return (
-                <div className="dinamic-buttons" key={val.id}>
-                    <button onClick={() => {removeData(val.id)}}>
-                        {val.name} | {val.ip}
-                    </button>
-                </div>
-            )
-        })}
+            {roomList.map((val) => {
+                return (
+                    <div className="dinamic-buttons" key={val.id}>
+                        <button onClick={() => {removeData(val.id)}}>
+                            {val.name} | {val.ip}
+                        </button>
+                    </div>
+                )
+            })}
         </>
     )
 }

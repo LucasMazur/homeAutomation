@@ -12,7 +12,7 @@ export default async (req: NowRequest, res: NowResponse) => {
             ip: ip
         })
         const dbColector = await db.all("SELECT * FROM rooms")
-            console.log(dbColector)
+        console.log(dbColector)
         return res.send('Successful')
     } catch (error) {
         console.log(error)
