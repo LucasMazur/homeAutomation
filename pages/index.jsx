@@ -8,8 +8,13 @@ export default () => {
 
   return (
     <div className="App">
+      <aside className="aside" />
       <header>
-        <h1>Home Automation</h1>
+        <Image className="logo"
+          src="/images/logo.svg"
+          width={450}
+          height={100}
+        />
       </header>
       <div className="container">
         <Buttons />
@@ -17,9 +22,9 @@ export default () => {
       <div className="float-button">
         <Link as="/Add" href="/Add">
           <a className="addButton"> 
-            <Image src="/images/add-icon.png"
-            width={4}
-            height={4}/>
+            <Image src="/images/add.png"
+              width={10}
+              height={10}/>
           </a>
         </Link>
       </div>

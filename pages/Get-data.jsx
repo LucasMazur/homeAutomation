@@ -6,28 +6,22 @@ export default () => {
     const [roomList, setRoomList] = useState([])
 
     useEffect(() => {
-        Axios.get("http://localhost:5500/getdata").then((response) => {
-            setRoomList(response.data)
+        Axios.get("http://172.16.30.171:3001/api/userRooms/get").then((response) => {
+            setRoomList(response.data || {})
         })
     }, [roomList])
 
-    /*useEffect(() => {
-        Axios.get("/api/server").then((response) => {
-            setRoomList(response.data)
-        })
-    }, [roomList])*/
-
     const removeData = (val) => {
-        Axios.post("http://localhost:5500/removedata", {id: val})
+        Axios.post("http://localhost:3001/api/userDevices/remove", {del: val})
     }
 
     return (
         <>
             {roomList.map((val) => {
                 return (
-                    <div className="dinamic-buttons" key={val.id}>
-                        <button onClick={() => {removeData(val.id)}}>
-                            {val.name} | {val.ip}
+                    <div className="dinamic-buttons" key={val._id}>
+                        <button onClick={() => {removeData(val._id)}}>
+                            {val.roomName}
                         </button>
                     </div>
                 )

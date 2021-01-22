@@ -8,21 +8,29 @@ import Getdata from './Get-data'
 export default () => {
 
     const [roomName, setRoomName] = useState('')
+    const [deviceName, setDeviceName] = useState('')
     const [ipDevice, setIpDevice] = useState('')
+    const [imageUrl, setImageUrl] = useState('')
 
     const submitData = () => {
-        Axios.post("/api/savedata", {name: roomName, ip: ipDevice,})
+        Axios.post("http://172.16.30.171:3001/api/userRooms/save", {roomName: roomName, imageUrl: imageUrl})
+        Axios.post("http://172.16.30.171:3001/api/userDevices/save", {roomName: roomName, deviceName: deviceName, ip:ipDevice})
+            .then(() => window.location.pathname='/')
     }
 
     return (
         <div className="comodo">
             <header>
-                <h1>Adicionar Novo Cômodo</h1>
+                <h1>Adicionar Novo Device</h1>
             </header>
             <div className="addRoom">
                 <label htmlFor="">NOME DO CÔMODO: </label>
                 <input type="text" className="roomName" onChange={(e) => {
                     setRoomName(e.target.value)
+                }}/>
+                <label htmlFor="">NOME DO DISPOSITIVO: </label>
+                <input type="text" className="deviceName" onChange={(e) => {
+                    setDeviceName(e.target.value)
                 }}/>
                 <label htmlFor="">IP DO DISPOSITIVO: </label>
                 <input type="text" className="ipDevice" onChange={(e) => {
