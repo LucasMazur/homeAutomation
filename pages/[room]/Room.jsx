@@ -17,16 +17,16 @@ export default () => {
     }, [])
 
     return (
-        <>
-        {deviceList.map((val) => {
-            return (
-                <Link as={`/${val.deviceName}/${val.ip}`} href="/[room]/[ip]">
-                    <button>
-                        {val.deviceName}
-                    </button>
-                </Link>
-            )
-        })}
-        </>
+        <div className="container">
+            {deviceList.map((val) => {
+                return (
+                    <Link key={val._id} as={`/${val.deviceName}/${val.ip}`} href="/[room]/[ip]">
+                        <button>
+                            {val.deviceName}
+                        </button>
+                    </Link>
+                )
+            })}
+        </div>
     )
 }

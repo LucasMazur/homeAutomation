@@ -16,7 +16,7 @@ export default () => {
         <>
         {roomList.map((val) => {
             return (
-                <Link as={`/${val.roomName}/Room`} href="/[room]/Room">
+                <Link key={val._id} as={`/${val.roomName}/Room`} href="/[room]/Room">
                     <button>
                         {/* <Image src={val.imageUrl} width={20} height={20}/> */}
                         <img className="image-button" src={val.imageUrl} alt=""/>
