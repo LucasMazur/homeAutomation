@@ -10,7 +10,7 @@ export default () => {
     const [deviceList, setDeviceList] = useState([])
 
     useEffect(() => {
-        Axios.post("http://localhost:3001/api/userDevices/get", { roomName: roomName }).then((response) => {
+        Axios.post("https://myhomealumbraautomation.herokuapp.com/api/userDevices/get", { roomName: roomName }).then((response) => {
         setDeviceList(response.data || {})
         console.log(response.data)
         })        

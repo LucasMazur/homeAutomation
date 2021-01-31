@@ -6,13 +6,13 @@ export default () => {
     const [roomList, setRoomList] = useState([])
 
     useEffect(() => {
-        Axios.get("http://localhost:3001/api/userRooms/get").then((response) => {
+        Axios.get("https://myhomealumbraautomation.herokuapp.com/api/userRooms/get").then((response) => {
             setRoomList(response.data || {})
         })
     }, [roomList])
 
     const removeData = (val) => {
-        Axios.post("http://localhost:3001/api/userDevices/remove", {del: val})
+        Axios.post("https://myhomealumbraautomation.herokuapp.com/api/userDevices/remove", {del: val})
     }
 
     return (

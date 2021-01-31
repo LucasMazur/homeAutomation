@@ -12,8 +12,8 @@ export default () => {
     const [ipDevice, setIpDevice] = useState('')
 
     const submitData = () => {
-        Axios.post("http://localhost:3001/api/userRooms/save", {roomName: roomName })
-        Axios.post("http://localhost:3001/api/userDevices/save", {roomName: roomName, deviceName: deviceName, ip:ipDevice})
+        Axios.post("https://myhomealumbraautomation.herokuapp.com/api/userRooms/save", {roomName: roomName })
+        Axios.post("https://myhomealumbraautomation.herokuapp.com/api/userDevices/save", {roomName: roomName, deviceName: deviceName, ip:ipDevice})
             .then(() => window.location.pathname='/')
     }
 
