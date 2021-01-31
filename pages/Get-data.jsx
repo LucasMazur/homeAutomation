@@ -6,7 +6,7 @@ export default () => {
     const [roomList, setRoomList] = useState([])
 
     useEffect(() => {
-        Axios.get("http://172.16.30.171:3001/api/userRooms/get").then((response) => {
+        Axios.get("http://localhost:3001/api/userRooms/get").then((response) => {
             setRoomList(response.data || {})
         })
     }, [roomList])

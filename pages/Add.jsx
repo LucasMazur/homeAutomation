@@ -10,11 +10,10 @@ export default () => {
     const [roomName, setRoomName] = useState('')
     const [deviceName, setDeviceName] = useState('')
     const [ipDevice, setIpDevice] = useState('')
-    const [imageUrl, setImageUrl] = useState('')
 
     const submitData = () => {
-        Axios.post("http://172.16.30.171:3001/api/userRooms/save", {roomName: roomName, imageUrl: imageUrl})
-        Axios.post("http://172.16.30.171:3001/api/userDevices/save", {roomName: roomName, deviceName: deviceName, ip:ipDevice})
+        Axios.post("http://localhost:3001/api/userRooms/save", {roomName: roomName })
+        Axios.post("http://localhost:3001/api/userDevices/save", {roomName: roomName, deviceName: deviceName, ip:ipDevice})
             .then(() => window.location.pathname='/')
     }
 
