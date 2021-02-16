@@ -7,10 +7,10 @@ export default () => {
     const [roomList, setRoomList] = useState([])
 
     useEffect(() => {
-        Axios.get("https://myhomealumbraautomation.herokuapp.com/api/userRooms/get").then((response) => {
+        Axios.get(`https://myhomealumbraautomation.herokuapp.com/api/userRooms/get`).then((response) => {
         setRoomList(response.data || {})
         })        
-    }, [roomList])
+    }, [])
 
     return (
         <>

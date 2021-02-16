@@ -10,10 +10,11 @@ export default () => {
     const [roomName, setRoomName] = useState('')
     const [deviceName, setDeviceName] = useState('')
     const [ipDevice, setIpDevice] = useState('')
+    const [out, setOut] = useState('')
 
     const submitData = () => {
         Axios.post("https://myhomealumbraautomation.herokuapp.com/api/userRooms/save", {roomName: roomName })
-        Axios.post("https://myhomealumbraautomation.herokuapp.com/api/userDevices/save", {roomName: roomName, deviceName: deviceName, ip:ipDevice})
+        Axios.post("https://myhomealumbraautomation.herokuapp.com/api/userDevices/save", {roomName: roomName, deviceName: deviceName, ip:ipDevice, out:out})
             .then(() => window.location.pathname='/')
     }
 
@@ -35,7 +36,16 @@ export default () => {
                 <input type="text" className="ipDevice" onChange={(e) => {
                     setIpDevice(e.target.value)
                 }}/>
-                <button type="submit" onClick={submitData}>SALVAR</button>
+                <label htmlFor="">QUAL SAÍDA: </label>
+                <input list='outs' className="out" onChange={(e) => {
+                    setOut(e.target.value)
+                }}/>
+                <datalist id='outs'>
+                    <option value="saida01" />
+                    <option value="saida02" />
+                    <option value="saida03" />
+                </datalist>
+                <button style={{background: 'black'}} type="submit" onClick={submitData}>SALVAR</button>
             </div>
             <div className="float-button-back">
                 <Link as="/" href="/">
